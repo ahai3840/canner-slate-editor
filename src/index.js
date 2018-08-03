@@ -82,16 +82,22 @@ const plugins = [
 
 type Props = {
   readOnly: boolean,
+  autoFocus: boolean,
   menuToolbarOption: {[string]: any}[],
   value: Value,
   onChange: (change: Change) => void,
+  placeholderClassName: string,
+  placeholder?: any,
   serviceConfig?: any,
   galleryConfig?: any
 }
 
 type EditorProps = {
   readOnly: boolean,
+  autoFocus: boolean,
   value: Value,
+  placeholderClassName: string,
+  placeholder?: any,
   onChange: (change: Change) => void,
   serviceConfig?: any,
   galleryConfig?: any
@@ -193,12 +199,28 @@ export default class EditorComponent extends React.Component<Props, State> {
   }
 
   render() {
-    const {value, onChange, serviceConfig, galleryConfig, menuToolbarOption, readOnly, ...rest} = this.props;
+    const {
+      value, 
+      onChange, 
+      serviceConfig, 
+      galleryConfig, 
+      menuToolbarOption, 
+      readOnly, 
+      placeholder,
+      placeholderClassName,
+      autoFocus,
+      ...rest
+    } = this.props;
     const {isFull} = this.state;
-
     return readOnly ? (
-      <CannerEditor value={value} onChange={arg => arg} readOnly={readOnly} />
-    ) : (
+      <CannerEditor 
+        value={value} 
+        onChange={arg => arg} 
+        readOnly={readOnly} 
+        placeholder={placeholder}
+        autoFocus={autoFocus}
+        placeholderClassName={placeholderClassName} />
+      ) : (
       <Container isFull={isFull} {...rest}>
         {
           isFull ? (
@@ -223,7 +245,14 @@ export default class EditorComponent extends React.Component<Props, State> {
           )
         }
         <EditorContainer isFull={isFull}>
-          <CannerEditor value={value} onChange={onChange} readOnly={readOnly} />
+          <CannerEditor 
+            value={value} 
+            onChange={onChange} 
+            readOnly={readOnly}
+            placeholder={placeholder}
+            autoFocus={autoFocus}
+            placeholderClassName={placeholderClassName}
+           />
         </EditorContainer>
       </Container>
     );
@@ -241,7 +270,14 @@ class CannerEditor extends React.Component<EditorProps> {
   }
 
   render() {
-    const {value, onChange, readOnly} = this.props;
+    const {
+      value, 
+      onChange, 
+      readOnly, 
+      placeholder, 
+      placeholderClassName,
+      autoFocus
+    } = this.props;
     return (
       <Editor 
         className="markdown-body"
@@ -249,6 +285,9 @@ class CannerEditor extends React.Component<EditorProps> {
         readOnly={readOnly}
         onChange={onChange}
         plugins={plugins}
+        placeholder={placeholder}
+        autoFocus={autoFocus}
+        placeholderClassName={placeholderClassName}
         />
     )
   }

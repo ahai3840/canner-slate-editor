@@ -22,6 +22,8 @@ class DemoEditor extends React.Component<*, {value: Value}> {
         <CannerEditor
           value={value}
           onChange={onChange}
+          placeholder="请输入..."
+          autoFocus
           serviceConfig={{
             name: 'image',
             accept: 'image/*',
