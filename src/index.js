@@ -137,10 +137,7 @@ const FixedToolbar = styled.div`
 const toolbarOptions = {
   icons: [
     Bold,
-    Italic,
-    StrikeThrough,
     Underline,
-    Code,
     Clean
   ],
   position: 'top',
