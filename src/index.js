@@ -79,7 +79,7 @@ const Container = styled.div`
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: 1000
+    z-index: 99000
   `)}
   background-color: #FFF;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 1px 1px rgba(0,0,0,0.16);
