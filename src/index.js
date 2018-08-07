@@ -18,10 +18,11 @@ import {LinkPlugin} from '@canner/slate-icon-link';
 import {ListPlugin} from '@canner/slate-icon-list';
 import Underline, {UnderlinePlugin} from '@canner/slate-icon-underline';
 import {ParagraphPlugin} from '@canner/slate-icon-shared';
+
 import { AlignCenter, AlignLeft, AlignRight } from '@canner/slate-icon-align';
 import EditList from 'slate-edit-list';
+import TrailingBlock from 'slate-trailing-block'
 import EditBlockquote from 'slate-edit-blockquote';
-
 // default value
 import {DEFAULT as DEFAULTLIST} from '@canner/slate-helper-block-list';
 import {DEFAULT as DEFAULTBLOCKQUOTE} from '@canner/slate-helper-block-quote';
@@ -29,6 +30,7 @@ import {DEFAULT as DEFAULTBLOCKQUOTE} from '@canner/slate-helper-block-quote';
 import "github-markdown-css";
 
 const plugins = [
+  TrailingBlock(),
   EditList(DEFAULTLIST),
   EditBlockquote(DEFAULTBLOCKQUOTE),
   ParagraphPlugin(),
