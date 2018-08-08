@@ -6,15 +6,11 @@ import styled from 'styled-components';
 import Toolbar from './menuToolbar';
 import toolbar from 'slate-toolbar';
 import {BLOCKS} from '@canner/slate-constant';
-
-import {BlockquotePlugin} from '@canner/slate-icon-blockquote';
 import Bold, {BoldPlugin} from '@canner/slate-icon-bold';
 import Clean from '@canner/slate-icon-clean';
 import {TablePlugin} from '@canner/slate-icon-table';
 import { HeaderOnePlugin, HeaderTwoPlugin, HeaderThreePlugin} from '@canner/slate-icon-header';
-import {HrPlugin} from '@canner/slate-icon-hr';
 import {ImagePlugin} from '@canner/slate-icon-image';
-import {LinkPlugin} from '@canner/slate-icon-link';
 import {ListPlugin} from '@canner/slate-icon-list';
 import Underline, {UnderlinePlugin} from '@canner/slate-icon-underline';
 import {ParagraphPlugin} from '@canner/slate-icon-shared';
@@ -22,28 +18,22 @@ import {ParagraphPlugin} from '@canner/slate-icon-shared';
 import { AlignCenter, AlignLeft, AlignRight } from '@canner/slate-icon-align';
 import EditList from 'slate-edit-list';
 import TrailingBlock from 'slate-trailing-block'
-import EditBlockquote from 'slate-edit-blockquote';
 // default value
 import {DEFAULT as DEFAULTLIST} from '@canner/slate-helper-block-list';
-import {DEFAULT as DEFAULTBLOCKQUOTE} from '@canner/slate-helper-block-quote';
 
 import "github-markdown-css";
 
 const plugins = [
   TrailingBlock(),
   EditList(DEFAULTLIST),
-  EditBlockquote(DEFAULTBLOCKQUOTE),
   ParagraphPlugin(),
-  BlockquotePlugin(),
   BoldPlugin(),
   UnderlinePlugin(),
   HeaderOnePlugin(),
   HeaderTwoPlugin(),
   HeaderThreePlugin(),
   TablePlugin(),
-  HrPlugin(),
   ImagePlugin(),
-  LinkPlugin(),
   ListPlugin(),
 ];
 
