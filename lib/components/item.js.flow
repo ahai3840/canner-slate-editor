@@ -6,6 +6,12 @@ export const Container = styled.div`
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px 1px rgba(0, 0, 0, 0.16);
   line-height: 0px !important;
   background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  z-index: 99000;
 
   .__canner-editor_topToolbarItem,
   .__canner-editor_topToolbarItemActive {

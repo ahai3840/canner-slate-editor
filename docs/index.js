@@ -17,8 +17,6 @@ class DemoEditor extends React.Component<*, {value: Value}> {
     const onChange = ({value}) => this.setState({value});
 
     return (
-      <div style={{margin: '20px'}}>
-        <h1>Canner-slate-editor demo</h1>
         <CannerEditor
           value={value}
           onChange={onChange}
@@ -35,7 +33,6 @@ class DemoEditor extends React.Component<*, {value: Value}> {
           }}
           galleryConfig={null}
           />
-      </div>
     );
   }
 }

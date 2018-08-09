@@ -76,9 +76,11 @@ const Container = styled.div`
     z-index: 99000
   `)}
   background-color: #FFF;
+  height: 430px;
+  padding-top: 40px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 1px 1px rgba(0,0,0,0.16);
-  overflow-y: ${props => props.isFull ? 'scroll' : 'hidden'};
-  overflow-x: hidden;
+  overflow-y: ${props => props.isFull ? 'scroll' : 'auto'};
+  overflow-x: auto;
 `
 
 const EditorContainer = styled.div`
