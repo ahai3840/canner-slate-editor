@@ -43,6 +43,7 @@ type Props = {
   menuToolbarOption: {[string]: any}[],
   value: Value,
   onChange: (change: Change) => void,
+  className: string,
   placeholderClassName: string,
   placeholder?: any,
   serviceConfig?: any,
@@ -53,6 +54,7 @@ type EditorProps = {
   readOnly: boolean,
   autoFocus: boolean,
   value: Value,
+  className: string,
   placeholderClassName: string,
   placeholder?: any,
   onChange: (change: Change) => void,
@@ -137,12 +139,14 @@ export default class EditorComponent extends React.Component<Props, State> {
       readOnly, 
       placeholder,
       placeholderClassName,
+      className,
       autoFocus,
       ...rest
     } = this.props;
     const {isFull} = this.state;
     return readOnly ? (
-      <CannerEditor 
+      <CannerEditor
+        className={className}
         value={value} 
         onChange={arg => arg} 
         readOnly={readOnly} 
@@ -174,7 +178,8 @@ export default class EditorComponent extends React.Component<Props, State> {
           )
         }
         <EditorContainer isFull={isFull}>
-          <CannerEditor 
+          <CannerEditor
+            className={className}
             value={value} 
             onChange={onChange} 
             readOnly={readOnly}
@@ -202,13 +207,14 @@ class CannerEditor extends React.Component<EditorProps> {
       value, 
       onChange, 
       readOnly, 
-      placeholder, 
+      placeholder,
+      className,
       placeholderClassName,
       autoFocus
     } = this.props;
     return (
       <Editor 
-        className="markdown-body"
+        className={className?`markdown-body ${className}` :"markdown-body"}
         value={value}
         readOnly={readOnly}
         onChange={onChange}
