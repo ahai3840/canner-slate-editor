@@ -16,9 +16,9 @@ module.exports = {
     filename: '[name].js'
   },
   externals: {
-    'react': "React",
+     'react': "React",
     'react-dom': "ReactDOM",
-    // 'slate': "Slate",
+     //'slate': "Slate",
     'styled-components': 'styled',
     'antd': 'antd',
     'lodash': '_',
